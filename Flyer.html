@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LISTA 3 - Programma Elettorale</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .flyer-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .flyer-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hotspot Interactive Layer */
+    .hotspot {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    /* Pulse Pin Effect */
+    .pin {
+      width: 22px;
+      height: 22px;
+      background-color: rgba(229, 9, 20, 0.9);
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+      animation: pulse 1.8s infinite;
+      transition: transform 0.2s ease;
+    }
+
+    .hotspot:hover .pin {
+      transform: scale(1.3);
+      background-color: #ff3333;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(229, 9, 20, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+    }
+
+    /* Tooltip / Modal Box */
+    .tooltip {
+      visibility: hidden;
+      opacity: 0;
+      width: 240px;
+      background-color: rgba(20, 20, 20, 0.95);
+      color: #fff;
+      text-align: left;
+      border-radius: 8px;
+      padding: 12px 14px;
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      border: 1px solid #e50914;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .tooltip h4 {
+      font-size: 15px;
+      color: #ff4d4d;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .tooltip p {
+      font-size: 13px;
+      line-height: 1.4;
+      color: #dddddd;
+    }
+
+    .hotspot:hover .tooltip,
+    .hotspot:focus .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Responsive Adjustments for Mobile Tap */
+    @media (max-width: 480px) {
+      .tooltip {
+        width: 180px;
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flyer-container">
+    <img src="flyer.jpg" alt="Lista 3 Programma Elettorale" class="flyer-img">
+
+    <!-- Interactive Point 1 -->
+    <div class="hotspot" style="top: 25%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Scuola Ascolta</h4>
+        <p>Un box di ascolto e uno sportello anonimo dove ogni studente può proporre idee e segnalare problemi della scuola.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 2 -->
+    <div class="hotspot" style="top: 32%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Assemblee Tematiche</h4>
+        <p>Incontri interattivi dedicati ad argomenti d'attualità scelti direttamente tramite sondaggi dagli studenti.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 3 -->
+    <div class="hotspot" style="top: 38%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Assemblee in 1 Minuto</h4>
+        <p>Format veloci e dinamici per comunicare le novità e le decisioni dell'istituto senza perdere tempo.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 4 -->
+    <div class="hotspot" style="top: 43%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Tornei Sportivi</h4>
+        <p>Organizzazione di tornei d'istituto di calcetto, pallavolo e scacchi aperti a tutti gli studenti.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 5 -->
+    <div class="hotspot" style="top: 48%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Feste Insieme</h4>
+        <p>Eventi ricreativi e feste d'istituto per rafforzare la comunità scolastica fuori e dentro la scuola.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 6 -->
+    <div class="hotspot" style="top: 53%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Plinio Fuori</h4>
+        <p>Uscite didattiche ricreative, giornate all'aperto e attività extra-curriculari sul territorio.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 7 -->
+    <div class="hotspot" style="top: 58%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Plinio Card</h4>
+        <p>Una carta sconti esclusiva per gli studenti del Plinio presso negozi, librerie e locali convenzionati.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 8 -->
+    <div class="hotspot" style="top: 63%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Banca di Sapere</h4>
+        <p>Rete gratuita di aiuto compiti e ripetizioni tra studenti per condividere appunti e competenze.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 9 -->
+    <div class="hotspot" style="top: 68%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>Scatola Rosa</h4>
+        <p>Iniziativa per distribuire gratuitamente prodotti di igiene femminile all'interno del bagno della scuola.</p>
+      </div>
+    </div>
+
+    <!-- Interactive Point 10 -->
+    <div class="hotspot" style="top: 73%; left: 50%;" tabindex="0">
+      <div class="pin"></div>
+      <div class="tooltip">
+        <h4>CinePlinio</h4>
+        <p>Proiezioni cinematografiche pomeridiane a scuola seguite da dibattiti e confronti di gruppo.</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
